@@ -1,0 +1,2 @@
+xn="Rani"
+echo $xn
