@@ -1,6 +1,4 @@
 <?php
-// PHP code to check for Palindrome number in PHP
-// Function to check for Palindrome
 function Palindrome($number){
 	$temp = $number;
 	$new = 0;
@@ -18,7 +16,7 @@ function Palindrome($number){
 }
 
 $original = 1441;
-echo "Palindrome Check Program";
+echo "Palindrome Check Program<br>";
 if (Palindrome($original)){
 	echo "Palindrome";
 }
