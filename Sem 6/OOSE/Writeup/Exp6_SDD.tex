@@ -1,0 +1,497 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{longtable,array}
+\usepackage{multicol}
+\usepackage{float}
+\graphicspath{ {./} }
+
+\title{Software Design Document
+
+for
+
+Student Networking Website}
+
+\author{Rajas Bondale - 1914068, Devansh Shah - 1914078}
+
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Introduction}
+\subsection{Design Overview}
+The website centers around creating a social space for students to write blogs on almost any interest of their own. Every blog post will have a like and dislike button and a comment section allowing discussions under that blog.
+The website will have a landing portal(home page) which will have links to register and a login page. The website will not allow any unregistered users to post blogs or like, dislike or comment on the blogs. While registering, students will be asked to fill details appropriate for the website to increase connectivity.
+There will be a profile page displaying all the details of a student like his/her name, their bio, skill-set, stream of education, experience(if applicable, in internships). Said profile page will also allow users to connect other social media accounts like Facebook, Instagram, LinkedIn and also display their Github profile.
+    
+\subsection{Requirements Traceability Matrix}
+See \ref{fig:Requirement Traceability Matrix}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/RTM.png}
+    \caption{Requirement Traceability Matrix}
+    \label{fig:Requirement Traceability Matrix}
+\end{figure}
+
+
+\section{System Architectural Design}
+\subsection{Chosen System Architecture}
+The Client server architecture is a software design pattern. It is a collection of three important components Model View and Template. 
+The Model helps to handle database. It is a data access layer which handles the data.
+
+The Template is a presentation layer which handles User Interface part completely.
+
+The View is used to execute the business logic and interact with a model to carry data and renders a template. Although Django follows MVC pattern but maintains it’s own conventions. So, control is handled by the framework itself. There is no separate controller and complete application is based on Model View and Template. That’s why it is called MVT application. See the following graph that shows the MVT based control flow.
+
+See \ref{fig:Chosen Architecture}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/Architecture.png}
+    \caption{Chosen Architecture}
+    \label{fig:Chosen Architecture}
+\end{figure}
+
+Here, a user requests for a resource to the Django, Django works as a controller and check to the available resource in URL. If URL maps, a view is called that interact with model and template, it renders a template. Django responds back to the user and sends a template as a response.
+
+\subsection{Discussion of Alternative Designs}
+\begin{enumerate}
+
+    \item \textbf{Object-Oriented Architectural Model:}\\
+    Object Oriented Architecture is an important concept for developing the software. It is a design paradigm based on the division of responsibilities for an application or system into individual reusable and self-sufficient objects. The popular approach of object-oriented design is to view a software system as a collection of entities known as objects. Object oriented is based on modeling real-world objects. Object-Oriented architecture has difficulty to determine all the necessary classes and objects required for a system. This methodology does not lead to successful reuse on a large scale without an explicit reuse procedure. Hence this approach was not selected as well.
+    
+    \item \textbf{MVC Architectural Model:}\\
+    MVC stands for Model-View-Controller. MVC architecture separated an application into three main components: model, view and controller. It is a software architectural design for implementing user interfaces on computers and is a standard design pattern. Many developers are familiar with MVC architecture. MVC architecture helps to write better organized and more maintainable code This architecture is used and extensively tested over multiple languages and generations of programmers. MVC is popular among various major programming languages such as Java, PHP, ASP.NET etc. MVC is being used as the powerful framework for building web applications using MVC pattern. MVC separation helps to manage complex applications. It is the main advantage of separation and also simplifies the team development. But It makes any data model expensive because of multiple pairs of controllers and views based on the same data model. As many clients would be accessing this web application this is not a suggested approach.
+\end{enumerate}
+
+\subsection{System Interface Description}
+\begin{enumerate}
+    \item The system will be a web application and will be cross-browser so that it can operate well on any browser. It will also be responsive and can hence be accessed through the browsers in the mobile phones/tablets (small screens).
+    
+    \item The application will have a seamless front end design so that the users can access the functionalities without any technical problems.
+    
+    \item The user interface will allow the user to add questions through the website itself, and can also enter tags to make the question more meaningful. 
+    
+    \item The user will also be able to answer questions posted by other users. 
+    
+    \item The user will also be able to buy answers. To do so, they will have to navigate to the question they want answers for, if there are answers present, the user can then click on buy answers option. They will be navigated to a payment page. Once payment is confirmed, they will be able to see answers to the question. 
+    
+    \item Users will also have the right to upvote answers that they have paid for. This will help sort answers with much better answer than those with not good answers. 
+    
+    \item Users will also be able  to search for questions. 
+\end{enumerate}
+
+\section{Detailed Description of Components}
+
+\subsection{User}
+\subsubsection{Responsibilities}
+The user is responsible for making posts, comments, liking posts and comments and editing their profile .
+\subsubsection{Constraints}
+The user cannot add or delete posts and comments of other users. They can also not see the personal details of other users. They can also not create other users. They cannot edit profiles of other users.
+\subsubsection{Composition}
+\begin{enumerate}
+    \item Frontend: ReactJS
+    \item Backend: NodeJS, MongoDB
+\end{enumerate}
+\subsubsection{Interactions}
+The user will see the home page filled with posts that the user can like, comment on. The user is also able to like the comments. The user is also allowed to edit his/her profile, add work experience, education and projects.
+\subsubsection{Resources}
+Web browser, Web app url, backend server, frontend server, database
+
+\subsection{Posts}
+\subsubsection{Responsibilities}
+This contains the content of the post and the likes it has. It also has a discussion section which contains many other comment components.
+\subsubsection{Constraints}
+The post cannot be deleted by any users, only by its owner. Posts cannot be updated. 
+\subsubsection{Composition}
+\begin{enumerate}
+    \item Frontend: ReactJS
+    \item Backend: NodeJS, MongoDB
+\end{enumerate}
+\subsubsection{Interactions}
+Users can like or dislike the post and comment under it to start a discussion.
+\subsubsection{Resources}
+Web browser, Web app url, backend server, frontend server, database
+
+
+\subsection{Comments}
+\subsubsection{Responsibilities}
+This contains the content of the comment and displays the likes it has.
+
+\subsubsection{Constraints}
+The comments cannot be deleted by any users, only by its owner. Posts cannot be updated. 
+
+\subsubsection{Composition}
+\begin{enumerate}
+    \item Frontend: ReactJS
+    \item Backend: NodeJS, MongoDB
+\end{enumerate}
+\subsubsection{Interactions}
+Users can like or dislike the comment.
+
+\subsubsection{Resources}
+Web browser, Web app url, backend server, frontend server, database
+
+
+
+\subsection{Likes}
+\subsubsection{Responsibilities}
+Used to see the relevance and popularity of a post or a comment. 
+
+\subsubsection{Constraints}
+Likes can be made only by registered and logged in users.
+
+\subsubsection{Composition}
+\begin{enumerate}
+    \item Frontend: ReactJS
+    \item Backend: NodeJS, MongoDB
+\end{enumerate}
+\subsubsection{Interactions}
+Users can like or dislike posts or comments.
+
+\subsubsection{Resources}
+Web browser, Web app url, backend server, frontend server, database
+
+
+\pagebreak
+	
+\section{User Interface Design}
+\subsection{Description of the User Interface}
+\subsubsection{Screen Images}
+\begin{figure} [h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/Login.png}
+    \caption{Login Screen}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/Signup.png}
+    \caption{Register Screen}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/newdashboard.png}
+    \caption{Dashboard of a new profile}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{images/createprofile.png}
+    \caption{Create Profile}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=1\textwidth]{images/editprofile.png}
+    \caption{Edit profile}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/addjob.png}
+    \caption{Add employment}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/addeducation.png}
+    \caption{Add education}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/detailsdashboard.png}
+    \caption{Dashboard filled with information}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/posts.png}
+    \caption{All posts}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/post.png}
+    \caption{Post page}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/students.png}
+    \caption{All students' profiles}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/otherprofiles.png}
+    \caption{Other user's profile}
+\end{figure}
+
+
+\pagebreak
+\subsubsection{Objects and Actions}
+\begin{enumerate}
+    \item Login Screen
+    \\ This is the main screen that the user encounter first where they can decide to login if they have already register or click on register button to register on the website.
+    \item Registration Screen
+    \\ On this screen users can register themselves to the website.
+    \item New Dashboard
+    \\ Once the user signs up, he/she has to complete his/her profile.
+    \item Create profile
+    \\ User has to fill the form to complete profile.
+    \item Edit profile
+    \\ User can edit the profile
+    \item Add employment
+    \\ User can add his/her employment history here
+    \item Add education
+    \\ User can add his/her education  history here
+    \item Filled dashboard
+    \\ User can add his/her education  history here
+\item All posts
+    \\ User can view all the posts on the website here
+\item Post page
+    \\ User can view the discussion under a post and comment.
+\item All students' profiles
+    \\ User can view a list of all the profiles on the website
+\item Other user's profiles
+    \\ User can view the details of another user's profile
+
+\end{enumerate}
+
+\pagebreak
+
+\section{System Architecture}
+\subsection{Use Case 1}
+\begin{center}
+    \begin{longtable}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} | }
+        \hline
+        \textbf{Use Case ID:} & \multicolumn{3}{l|}{\textbf{1}} \\
+        \hline
+        \textbf{Use Case Name:} & \multicolumn{3}{l|}{\textbf{User Registration}}\\
+        \hline
+         Created By: & Rajas Bondale & Last Updated By: & Devnash Shah \\
+        \hline
+        Date Created: & 01.04.2022 & Date Last Updated: & 01.04.2022 \\
+        \hline
+        Primary Actors: & \multicolumn{3}{l|}{User}\\
+        \hline
+        Description: & \multicolumn{3}{p{9cm}|}{The user registers into the system by providing his/her details in the registration form.}\\
+        \hline
+        Trigger: & \multicolumn{3}{p{9cm}|}{User details will be stored in the database. }\\
+        \hline
+        Preconditions: & \multicolumn{3}{p{9cm}|}{The user cannot have the same email and username as another existing account. }\\
+        \hline
+        Post-conditions: & \multicolumn{3}{p{9cm}|}{None}\\
+        \hline
+        Normal Flow: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item The user selects the “signUp” option.
+                \item The user fills the registration form with all the required fields being validated.
+                \item The user submits the form.
+                \item The system validates the submitted data.
+	     \item The user has to fill the rest of his/her profile details.
+                \item The user can now write posts, comments and like other content.
+            \end{enumerate}
+        }\\
+        \hline
+        Alternative Flows: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Validation Failed
+                \begin{enumerate}
+                    \item The sign up page will throw an error if any of the details is incorrect or are empty.
+                    \item The system displays an error message and prompts the user to fill the fields which failed the validation.
+                    \item The user re-enters the information.
+                \end{enumerate}
+                \item User Duplication
+                \begin{enumerate}
+                    \item The user already exists in the system.
+                    \item The system returns an error message.
+                \end{enumerate}
+                
+            \end{enumerate}
+        }\\
+        \hline
+        Exceptions: & \multicolumn{3}{p{9cm}|}{
+            None
+        }\\
+        \hline
+        \hline
+        Priority: & \multicolumn{3}{p{9cm}|}{High}\\
+        \hline
+        Frequency of Use: & \multicolumn{3}{p{9cm}|}{As per the arrival of new user}\\
+        \hline
+        Special Requirements: & \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+        Open Issues: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Database Failure: The database is not available or the server is not responding.
+            \end{enumerate}
+        }\\
+        \hline
+        Assumptions:& \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+    \end{longtable}
+\end{center}
+    
+\subsection{Use Case 2}
+\begin{center}
+    \begin{longtable}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} | }
+        \hline
+        \textbf{Use Case ID:} & \multicolumn{3}{l|}{\textbf{2}} \\
+        \hline
+        \textbf{Use Case Name:} & \multicolumn{3}{l|}{\textbf{Post creation}}\\
+        \hline
+         Created By: & Rajas Bondale & Last Updated By: & Devansh Shah \\
+        \hline
+        Date Created: & 01.04.2022 & Date Last Updated: & 01.04.2022 \\
+        \hline
+        Primary Actors: & \multicolumn{3}{l|}{User}\\
+        \hline
+        Description: & \multicolumn{3}{p{9cm}|}{The user will create a post about content they want to share.}\\
+        \hline
+        Trigger: & \multicolumn{3}{p{9cm}|}{Post will be added to database and every other user will be able to see.}\\
+        \hline
+        Preconditions: & \multicolumn{3}{p{9cm}|}{User should be logged in.}\\
+        \hline
+        Post-conditions: & \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+        Normal Flow: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item The user enters the content in the form on the "All posts" page.
+                \item The user submits the form.
+                \item The system validates the submitted data.
+                \item If validated, the post will be added in the database and every other user would be able to see it.
+                \item User waits for comments to the post
+                \item The user can also comment to his/her own post and other comments.
+            \end{enumerate}
+        }\\
+        \hline
+        Alternative Flows: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Validation Failed
+                \begin{enumerate}
+                    \item The form will throw an error if any of the details triggers validity parameters.  
+                    \item The page will throw error if any fields are empty.
+                    \item The system displays an error message.
+                    \item The user re-enters the information
+                \end{enumerate}
+            \end{enumerate}
+        }\\
+        \hline
+        Exceptions: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Exception 1: Validation Failure
+                \begin{enumerate}
+                    \item The system gives incorrect validation checks.
+                \end{enumerate}
+            \end{enumerate}
+        }\\
+        \hline
+        Includes: & \multicolumn{3}{p{9cm}|}{Adding post to database}\\
+        \hline
+        Priority: & \multicolumn{3}{p{9cm}|}{High}\\
+        \hline
+        Frequency of Use: & \multicolumn{3}{p{9cm}|}{Whenever the user wishes to share content}\\
+        \hline
+        Special Requirements: & \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+        Open Issues: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Database Failure: The database is not available and the server is not responding.
+            \end{enumerate}
+        }\\
+        \hline
+        Assumptions:& \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+    \end{longtable}
+\end{center}
+
+
+\subsection{Use Case 3}
+\begin{center}
+    \begin{longtable}{ | p{3cm} | p{3cm} | p{3cm} | p{3cm} | }
+        \hline
+        \textbf{Use Case ID:} & \multicolumn{3}{l|}{\textbf{3}} \\
+        \hline
+        \textbf{Use Case Name:} & \multicolumn{3}{l|}{\textbf{Comment}}\\
+        \hline
+         Created By: & Rajas Bondale & Last Updated By: & Devansh Shah \\
+        \hline
+        Date Created: & 01.04.2022 & Date Last Updated: & 01.04.2022 \\
+        \hline
+        Primary Actors: & \multicolumn{3}{l|}{User}\\
+        \hline
+        Description: & \multicolumn{3}{p{9cm}|}{The user will comment to a post or a comment.}\\
+        \hline
+        Trigger: & \multicolumn{3}{p{9cm}|}{Comment will be added to database and every other user will be able to see under that specific post.}\\
+        \hline
+        Preconditions: & \multicolumn{3}{p{9cm}|}{User should be logged in.}\\
+        \hline
+        Post-conditions: & \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+        Normal Flow: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item User finds the post they wish to comment to. 
+                \item The user proceeds to the page of the post.
+                \item The user enters the comment's content in the form given.
+                \item The user submits the form.
+                \item The system validates the submitted data.
+                \item If validated, the comment will be added on the database and every other user would be able to see it.
+                \item The user can add multiple comments under a post.
+            \end{enumerate}
+        }\\
+        \hline
+        Alternative Flows: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Validation Failed
+                \begin{enumerate}
+                    \item The form will throw an error if any of the details trigger validity parameters.  
+                    \item The page will throw error if any fields are empty.
+                    \item The system displays an error message and prompts the user to fill the form which failed the validation.
+                    \item The user re-enters the information
+                \end{enumerate}
+            \end{enumerate}
+        }\\
+        \hline
+        Exceptions: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Exception 1: Validation Failure
+                \begin{enumerate}
+                    \item The system gives incorrect validation checks.
+                \end{enumerate}
+            \end{enumerate}
+        }\\
+        \hline
+        Includes: & \multicolumn{3}{p{9cm}|}{Adding comments to database}\\
+        \hline
+        Priority: & \multicolumn{3}{p{9cm}|}{High}\\
+        \hline
+        Frequency of Use: & \multicolumn{3}{p{9cm}|}{As per the will of the users. }\\
+        \hline
+        Special Requirements: & \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+        Open Issues: & \multicolumn{3}{p{9cm}|}{
+            \begin{enumerate}
+                \item Database Failure: The database is not available and the server is not responding.
+            \end{enumerate}
+        }\\
+        \hline
+        Assumptions:& \multicolumn{3}{p{9cm}|}{Nil}\\
+        \hline
+    \end{longtable}
+\end{center}
+
+\section{Data flow specifications}
+\subsection{Level 0 DFD with description}
+Context diagram is a top level (also known as ”Level 0”) data flow diagram. It only contains one process node (”Process 0”) that generalizes the function of the entire system in relationship to external entities. Draw data flow diagrams can be made in several nested layers. A single process node on a high level diagram can be expanded to show a more detailed data flow diagram.
+The Zero Level DFD of Question Answer System, which includes the users, admin as the entities and all the processes of the web application are constructed considering these entities. Various processes like user asking questions, answering questions, searching for questions or upvoting answers are mentioned in the diagram. The admin processes are also mentioned in level 0 but not in detail.
+\subsection{Level 1 DFD with description}
+The first level DFD shows the main processes within the system. Each of these processes can be broken into further processes until you reach pseudo code. In the level 1 DFD, the processes are further broken down and the flow can be understood in further detail. The database can also be seen in the level 1 DFD and the we get a better idea about the processes regarding the users, profiles, posts, comments and likes. For example, a user once registered, has to complete their profile and then he/she proceeds with adding a post. The post is added to database and another user comments to it or likes it, following which the initial user can comment as to reply to the comments.
+\end{document}

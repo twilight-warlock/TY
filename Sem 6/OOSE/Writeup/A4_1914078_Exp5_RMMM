@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\title{RMMM Plan}
+\author{Rajas Bondale - 1914068, Devansh Shah - 1914078}
+
+
+\begin{document}
+\maketitle
+\pagebreak 
+\tableofcontents
+\pagebreak
+\begin{center}
+\textbf{Risk Assessment and Risk Management Plan}
+\end{center}
+
+\section{Risks Assessment}
+
+\subsection{Unable to meet the deadline}
+The deadline for the project has been set taking into consideration all contributing factors including the number of team members, time required to
+complete each functional requirement, urgency of the customer etc. In general an overestimation of the work flow and underestimation of difficulty of project contributes to an incorrect estimation of deadline hence leading to delays.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 3
+    \item Potential impact on the project (on the scale of 1-10): 9
+    \item Risk exposure = 3 * 9 = 27
+\end{enumerate}
+
+\subsection{Incorrect Budget estimation}
+There is a possibility that the actual cost of the project exceeds or remains
+unused during the development. Unplanned project expansion, incorrect
+calculation of budget or no reserved funds can lead to this risk.
+\begin{enumerate}
+    \item Likelihood of risk(on the scale of 1-10) : 4
+    \item Potential impact on the project (on the scale of 1-10): 9
+    \item Risk exposure = 4 * 9 = 36
+\end{enumerate}
+
+\subsection{Personal Data Security}
+This risk might occur if the developer has very little understanding about secure storage of data. If the personal data of the user is not stored with proper encryption, security is compromised. The risk of an account being hacked can also occur if a user sets the same password for multiple accounts. As your project also involves transactions, could lead to catastrophic problems if financial details of a customer are leaked. 
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 4
+    \item Potential impact on the project (on the scale of 1-10): 2
+    \item Risk exposure = 4 * 2 = 8
+\end{enumerate}
+
+\subsection{Server Crash}
+If many users are trying to access the website simultaneously, then the server might go down for sometime. Some might even try to use malicious tactics to enforce such a situation
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 4
+    \item Potential impact on the project (on the scale of 1-10): 4
+    \item Risk exposure = 4 * 4 = 16
+\end{enumerate}
+
+\subsection{Changes in Scope}
+Changing project scopes can also cause risks in software development. Scope
+creep refers to a project’s scope morphing into something completely different
+than it was initially. Scope creep can cause risks when it causes software developments to miss project deadlines and extend project time frames.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 4
+    \item Potential impact on the project (on the scale of 1-10): 6
+    \item Risk exposure = 4 * 6 = 24
+\end{enumerate}
+
+\subsection{Project Scope and requirement not well defined}
+The scope of the project is not well defined which leads to the development of a project which does not meet the requirements of the customer and in thus leads to a delay in project completion and might even cause changes in the budget. The cost of this increase in the budget might have to be borne by the company
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 7
+    \item Potential impact on the project (on the scale of 1-10): 3
+    \item Risk exposure = 7 * 3 = 21
+\end{enumerate}
+
+\subsection{Technical Risks}
+Use of cutting-edge technologies that lack community support or constant changes in software requirements can lead to technical risks that might delay the development process.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 6
+    \item Potential impact on the project (on the scale of 1-10): 2
+    \item Risk exposure = 6 * 2 = 12
+\end{enumerate}
+
+\subsection{Operational changes}
+Employee turnover, including key team members leaving projects, is another significant risk in software development. When team members leave software development projects, it can be hard to replace their skills, expertise and project background. It leads to a bottleneck and a standstill of certain aspects of the project.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 6
+    \item Potential impact on the project (on the scale of 1-10): 8
+    \item Risk exposure = 6 * 8 = 48
+\end{enumerate}
+
+
+\subsection{External Risks}
+There are also external risks worth considering. External risks can include
+unpredictable factors like changes in laws, economic shifts and natural disasters.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 4
+    \item Potential impact on the project (on the scale of 1-10): 8
+    \item Risk exposure = 4 * 8 = 32
+\end{enumerate}
+
+\subsection{Poor Risk Management}
+Finally, poor risk management can be a risk itself. Good risk management is
+essential for software development teams to spot risks and effectively respond
+to them.
+\begin{enumerate}
+    \item Likelihood of Occurrence (on the scale of 1-10): 7
+    \item Potential impact on the project (on the scale of 1-10): 9
+    \item Risk exposure = 7 * 9 = 63
+\end{enumerate}
+
+\section{Risk Management}
+\subsection{Unable to meet the deadline}
+To avoid this risk we will apply agile methodologies and ensure the maximum
+involvement of all team members in planning and estimating.The owner and
+stakeholder will be involved in all the stages to receive valuable feedback.
+In case the project still gets delayed, we can expand the team to increase
+the speed of development, however, this can significantly affect the project
+budget.
+
+\subsection{Incorrect Budget estimation}
+It is necessary to maintain constant control of the budget and development process. When introducing additional functions or changes in the original plan make sure to calculate their impact on the cost.
+
+\subsection{Personal Data Security}
+The methods for hashing and encrypting the data must be improved and changed constantly. The users must be informed to change the passwords as previous passwords will be disabled and not be working anymore. Experienced programmers should be involved when employing technique for transaction of money. 
+
+\subsection{Server Crash}
+The lack of a stable-computing environment is extremely hazardous to a software development team. Team should cease work on that system until the environment is made stable again, or should move to a system that is stable and continue working there. Approximations need to be made on the number of people who might use the website at a time and hence servers need to be allotted.  
+
+\subsection{Changes in scope}
+The scope creep can be monitored by separating the project into manageable
+segments or iterations and frequently reviewing the scope.
+
+\subsection{Project Scope and requirement not well defined}
+In order to avoid this risk, several rounds of meetings should be held by the organization with the stakeholders so that we can get a clear understanding of the requirement, size and scope of the project. Problems relating to requirement elicitation should also be handled using checklists, or purposeful initiation in meetings. 
+
+\subsection{Technical Risks}
+In this case, only flexible risk management can help. Choosing the correct
+platform and reliable sources for development of the project can help avoid
+these risks.
+
+\subsection{Operational changes}
+You can’t predict or prevent all operational risks, but if you know a team shift or process change is coming, you can mitigate the effects of the transition. Make sure your team is prepared for the change and has time to adjust through team meetings, scheduling tools, or additional training. 
+
+\subsection{External Risks}
+It can be challenging to avoid external risks, but there are actions that can
+be taken to mitigate them. Obtaining insurance can help prepare for certain
+risks, and staying informed on software development laws and current events
+can allow to respond quickly to external risks as they arise.
+
+\subsection{Poor Risk Management}
+The risk management should be open for all to submit risks into. Proper documentation of Risk Information Sheets should be kept. Risk Documentation should be available for everyone involved in the project. Risk Documentation should go through multiple checks. 
+
+\section{Risk Checklist}
+\begin{center}
+    \begin{tabular}{ | p{6cm} | p{6cm} |  }
+        \hline
+        \textbf{Risk} & \textbf{Risk Reduction Technique}  \\
+        \hline
+        Unable to meet the deadline & Agile methodologies, involvement of all team members in planning and estimating, expand the team to increase the speed of development. \\
+        
+        \hline
+        Incorrect Budget estimation & Maintain constant control of the budget before making any major changes calculate their impact on the cost of the project. \\
+        
+        \hline
+        Personal Data Security & Use of experienced personnel and defined storage flow before execution.\\
+        
+        \hline
+        Server Crash & Predicting footfall on website, making arrangement of traffic management and response timing. \\
+        \hline
+        Changes in Scope & separating the project into manageable segments or iterations, frequently reviewing the scope.\\
+        
+        \hline
+        Project Scope and requirement not well defined & Actively identifying any scope changes with stakeholders, proper communication of change within or outside teams.\\
+        
+        \hline
+        Technical Risks & Flexible risk management, choosing the correct platform and reliable sources for development. \\
+        \hline
+        Operational changes & Documenting details of the project, maintaining technical documentation and training program for new members, transition plans.\\
+        
+        \hline
+        External Risks & Obtaining insurance, staying updated on software development laws and current events.\\
+        \hline
+        Poor Risk Management & Proper documentation of risks, developing mitigation, monitoring and management plans. Availability of development of RIS to all. \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+\end{document}
