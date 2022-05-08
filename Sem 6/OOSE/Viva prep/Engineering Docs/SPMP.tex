@@ -1,0 +1,166 @@
+\documentclass[12pt, letterpaper, twoside]{report}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx, caption}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\graphicspath{ {./images/} }
+\title{SOFTWARE PROJECT MANAGEMENT PLAN}
+\author{RAJAS BONDALE, DEVANSH SHAH}
+\date{February 2022}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Introduction}
+\section{Project Overview}
+\par \LARGE{ "Student Networking Website" is a networking website for students where they can write posts on almost any interest of their own. Every posts will have a comment section where discussion on the post can be held. Students can like or comment on the posts written by other users. This will allow students to open up about their interests and gain knowledge or distribute their knowledge. It'll develop a sense of collaboration among students and encourage co-operation. The proposed application will be a website and will run on most of the web browsers and operating systems.The users of the application do not need any technical knowledge to use the site. Users will need to have an internet connection to access the web application. }
+\section{Project Deliverables}
+\par \LARGE{The complete product including the user manuals and project closure documents alongwith the delivery of the final web application. }
+\par \LARGE{The lists of project deliverables are:
+\begin{itemize}
+\item Software Project
+Management Plan(SPMP) \item Software Requirements Specification(SRS) \item Software Test Plan (STP) \item Working
+application \item User manuals \item Installation
+document \item Project closure document \end{itemize} }
+\chapter{Project Organisation}
+\section{Software Process Model}
+\includegraphics{Incremental}
+\par \LARGE{We have used Incremental Model for software development as we found it to be the most appropriate for this project. It is a process model where requirements divided into multiple standalone modules of the software development cycle. Each module goes through the requirements, design, implementation and testing phases. Every consecutive increment adds to the previous increment. 
+\par Each increment goes through all phases of design, testing and implementation. Every feature added can be treated as a separate increment. Once an increment is added, there's little chance of having to go back and fix some error. Developers can focus completely on adding a new increment, without having to worry about disturbing previously written code. 
+\par Delivering a working prototype requires short time. Also, with every prototype made, developers are able to recognize what is remaining in the project. Prototypes also act as proof of development to the clients. }
+\section{Roles and Responsibilites}
+\LARGE{
+\begin{itemize}
+\item Project Manager: Rajas Bondale
+The project manager is responsible for the complete planning, execution, monitoring, and delivery of the project. The planning includes the planning out the scope, scheduling and a basic design of the project. The execution includes the transformation of low level design into a working model which includes development and testing of the product. The delivery activity includes delivering the finished products to the clients and other formalities.
+\item Developer: Rajas Bondale, Devansh Shah
+The developers are responsible for implementation of the proposed features and functionalities. They develop the application based on the agreed upon designs. The developers also produce working and tested prototypes as deliverables. 
+\item Tester: Devansh Shah
+The role of the tester is to test the application based on the test cases. The tester is responsible for creating the Test Plan and Test Cases. The tester should test the application, report the defects and assign the defects back to the developers if an issue is found. The tester is responsible for conducting the smoke testing, system testing, regression testing and integration testing.
+\end{itemize}}
+\section{Tools and Techniques}
+\begin{enumerate}
+\item SRS and SPMP documents required TexWorks and Overleaf.
+\item Gantt chart was created using Gantt Project.
+\item We will use Star UML for creating the necessary UML diagrams.
+\item ReactJS will be used for frontend UI creation.
+\item The backend will be designed by ExpressJS web framework and NodeJS web server.
+\item Data gathered will be stored in MongoDB database. This No-SQL database is very easy to use and scalable.
+\end{enumerate}
+\chapter{PROJECT MANAGEMENT PLAN}
+\section{Tasks}
+\subsection{Information gathering}
+\subsubsection{Description}
+Planning out what the website should be about and should like by discussing among team members. Designing problem statements, laying down the scope and gathering requirements which are realistic and doable, and classifying those into functional and non functional requirements
+\subsubsection{Deliverables and milestones}
+Completion of the SRS document.
+\subsubsection{Resources Needed}
+Discussion among team members and peers
+\subsubsection{Dependencies and constraints}
+None
+\subsection{Modelling requirements}
+\subsubsection{Description}
+Creating the UML diagram based on the requirements specified in the SRS document.
+\subsubsection{Deliverables and milestones}
+UML diagram.
+\subsubsection{Resources needed}
+StarUML software
+\subsubsection{Dependencies and constraints}
+None
+\subsubsection{Risks and contingencies}
+None
+\subsection{Coding}
+\subsubsection{Description}
+Developing and demonstrating working prototypes, gaining user feedback and suggestions. Once the prototype is declared succesful, beginning the development of the final product.
+\subsubsection{Deliverables and milestones}
+Prototype, Final website and SDD.
+\subsubsection{Resources needed}
+MERN stack
+\begin{itemize}
+\item React.js 17.0.2
+\item MongoDB 5.0.5
+\item Express.js 4.17.2
+\item Node.js 17.5.0
+\end{itemize}
+\subsubsection{Dependencies and constraints}
+SRS, SPMP, Javascript, MongoDB
+\subsubsection{Risks and contingencies}
+Prototypes developed might not satisfy the user's demands which could delay the release of the product. 
+
+\subsection{Testing}
+\subsubsection{Description}
+Two tests will be performed: 1:Alpha-testing:Client Side Testing Of Product 2:Beta-testing:Developer Side Testing Of Product.
+\subsubsection{Deliverables and milestones}
+Final Software, User Guide
+\subsubsection{Resources needed}
+Computers with a web browser and active internet connection will be necessary.
+\subsubsection{Dependencies and constraints}
+Internet Connection needed during Alpha Testing,SRS,SPMP,SDD
+\subsubsection{Risks and contingencies}
+There could be network access failure or database server failure. Can be fixed by having a database on the cloud.
+\subsection{Delivery}
+\subsubsection{Description}
+Deployment and presentation
+\subsubsection{Deliverables and milestones}
+Presentation
+\subsubsection{Resources needed}
+None
+\subsubsection{Dependencies and constraints}
+None
+\subsubsection{Risks and contingencies}
+None
+\subsection{Maintainence}
+\subsubsection{Description}
+Maintaining the database,Network testing and updating the
+software as per the client requirements
+\subsubsection{Deliverables and milestones}
+Maintenance and Updation Report
+\subsubsection{Resources needed}
+MERN stack
+\subsubsection{Dependencies and constraints}
+Javascript and MongoDB cloud database
+\subsubsection{Risks and contingencies}
+None
+\newpage
+\section{Assignments}
+\begin{center}
+\begin{tabular}{ |p{5cm}||p{4cm}|p{4cm}| }
+\hline
+\multicolumn{3}{|c|}{Tasks Assignment} \\
+\hline
+ Tasks & Main Resource& Supplemental Resource\\  
+\hline
+ Software  Requirement Specification & Rajas Bondale & Devansh Shah\\
+\hline
+Software Project Management Plan & Rajas Bondale & Devansh Shah\\
+\hline
+ Software Design Document & Devansh Shah & Rajas Bondale \\
+\hline
+ Coding & Devansh Shah & Rajas Bondale \\
+\hline
+ Testing & Rajas Bondale & Devansh Shah\\
+\hline
+ Software Requirement Specification & Rajas Bondale & Devansh Shah\\
+\hline
+ User Guide & Devansh Shah & Rajas Bondale \\
+\hline
+ Project Management & Rajas Bondale & Devansh Shah\\
+\hline
+\end{tabular}
+\end{center}
+\section{Timetable}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{GanttTimeline}
+\caption{Gantt Chart}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{GanttTasks}
+\centering
+\caption{Tasks}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{Pert}
+\caption{PERT Chart}
+\end{figure}
+\end{document}

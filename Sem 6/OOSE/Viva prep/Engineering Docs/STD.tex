@@ -1,0 +1,320 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{longtable,array}
+\usepackage{multicol}
+\usepackage{float}
+\graphicspath{ {./} }
+
+\title{Software Testing Document
+
+for
+
+Student Networking Website}
+
+\author{Rajas Bondale - 1914068, Devansh Shah - 1914078}
+
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\section{Introduction}
+\subsection{System overview}
+The website centers around creating a social space for students to write blogs on almost any interest of their own. Every blog post will have a like and dislike button and a comment section allowing discussions under that blog.
+The website will have a landing portal(home page) which will have links to register and a login page. The website will not allow any unregistered users to post blogs or like, dislike or comment on the blogs. While registering, students will be asked to fill details appropriate for the website to increase connectivity.
+There will be a profile page displaying all the details of a student like his/her name, their bio, skill-set, stream of education, experience(if applicable, in internships). Said profile page will also allow users to connect other social media accounts like Facebook, Instagram, LinkedIn and also display their Github profile.
+
+\par 
+Our website contains many forms for clients to fill. As we cannot control the input, we have proper validation code to ensure correct information gets sent to the database and that the new information gets displayed on the website. The focus of testing will be these forms as, if some malicious data gets entered into the forms it could affect the normal working of the database.
+    
+\subsection{Test approach}
+To check if the website is able to stop incorrect input from getting to the database, we will be testing the forms manually. Repeated testing will be done to ensure that the website is able to work regardless of different types of input.
+We will be going through the forms on the website such as Sign up, Login, Create profile, Add education, Add experience, posts and testing them manually with valid as well as invalid data. The constraints we will be facing is the deadline of submission.
+\subsubsection{Unit Testing}
+Unit testing, a testing technique using which individual modules are tested
+to determine if there are any issues by the developer himself. It is concerned
+with functional correctness of the standalone modules. Unit Testing is done
+during the development (coding phase) of an application by the developers.
+Unit Tests isolate a section of code and verify its correctness. A unit may be
+an individual function, method, procedure, module, or object.
+\subsubsection{White Box testing}
+White Box Testing is software testing technique in which internal structure,
+design and coding of software are tested to verify flow of input-output and to
+improve design, usability and security. In white box testing, code is visible to
+testers so it is also called Clear box testing, Open box testing, Transparent
+box testing, Code-based testing and Glass box testing. White box testing
+techniques analyze the internal structures, the used data structures, internal
+design, code structure and the working of the software rather than just the
+functionality as in black box testing. It is also called glass box testing or
+clear box testing or structural testing.
+\subsubsection{Black Box testing}
+Black box testing is a method of software testing that tests the functionality
+of an application as opposed to its internal structures of working. Specific
+knowledge of application’s code/internal structure and programming knowl-
+edge in general is not required. The tester is only aware of what the software
+is supposed to do, but not how i.e. When he/she enters a certain input,
+he/she gets a certain output; without being aware of how the output was
+produced in the first place. Test cases are built around specifications and
+requirements i.e. what the application is supposed to do. It uses external de-
+scriptions of the software, including specifications, requirements and design
+to derive test cases.
+\pagebreak
+\section{Test plan}
+The objectives supported by the Test Plan are:
+\begin{itemize}
+	\item To test the project such that it meets the business and user require-
+	ments.
+	 \item The Test Plan should find defects which may get created by the pro-
+	 grammer while developing the software.
+	\item To make sure that the end result is correct.
+	\item Testing can be helpful in gaining confidence in and providing informa-
+	tion about the level of quality.
+\end{itemize}
+
+The major functions and scopes that would be tested are:
+\begin{enumerate}
+	\item  Login Module
+	 \item Registration Module
+\end{enumerate}
+Following points to be considered while testing:
+\begin{itemize}
+	\item Perform unit testing on individual modules
+	\item Integrate the modules to perform the integration testing after successful
+	completion of unit testing.
+	\item Then, the system as a whole will be tested and we will perform the
+	system testing.
+	\item Different scenarios that can occur once the project will be deployed has
+	been considered for ensuring effective testing of the software.
+\end{itemize}
+
+
+The testing of the website will cover how the website is able to handle different types of inputs, showing messages: error and success as well as the data displayed on the website. Repeated manual testing of th forms will done changing the input at every iteration. 
+The items that will tested are the forms as well as other functionality like deleting posts, comments and editing profile. Dummy data will be used to test forms as well as deleting that dummy data from the website. 
+\subsection{Features to be tested}
+\begin{center}
+	\begin{longtable}{ | p{7cm} | p{7cm} | }
+	\hline
+		\textbf{Features to be tested} & \textbf{Scenarios} \\
+	\hline
+		User Login Module & 1) Creating a new user \newline 2) Proper Login \\
+	\hline
+		Posting module & 1) Able to write posting \newline 2) Able to comment \newline 3) Adding the posts to the database\\
+	\hline
+		Profile module & 1) Able to edit profile \newline 2) Able to add education \newline 3) Able to add experience \\
+	\hline
+	\end{longtable}
+\end{center}
+\subsection{Features not to be tested}
+\begin{center}
+	\begin{longtable}{ | p{7cm} | p{7cm} | }
+	\hline 
+		\textbf{Feature} & \textbf{Reasons}\\
+	\hline
+		Storage & Assumed to be infinite\\
+	\hline
+		Connection to database & 1) Sometimes blocked by firewalls \newline 2) Disrupted due to slow internet connections\\
+	\hline
+	\end{longtable}
+\end{center}
+
+\subsection{Testing tools and Environment}
+	\subsubsection{Testing Staff}
+	\begin{center}
+	\begin{longtable}{ | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Personnel} & \textbf{Count}\\
+		\hline
+			Test Lead & 1\\
+		\hline
+			Software Tester & 2\\
+		\hline
+	\end{longtable}
+	\end{center}
+	\subsubsection{Testing Schedule}
+		\begin{figure} 
+		    \centering
+		    \includegraphics[width=1\textwidth]{images/TestSchedule.png}
+		    \caption{Testing schedule}
+		\end{figure}
+	\subsubsection{Testing Environment}
+	\textbf{Operating system} 
+	\begin{enumerate}
+		\item Microsoft Windows (7 or above)
+	\end{enumerate}
+	\textbf{List of devices}
+		\begin{enumerate}
+			\item Laptop/PC
+		\end{enumerate}
+	\textbf{Browser requirement}
+	\begin{enumerate}
+	\item Google Chrome
+	\item Mozilla Firefox
+	\item Safari
+	\item Microsoft Edge
+	\end{enumerate}
+	\textbf{Server: Localhost} \\
+	\textbf{Editor: Visual Studio Code/Sublime Text}\\
+	\textbf{Documentation: MS Office, Overleaf}\\
+	\textbf{Workstation:} \\
+		\begin{enumerate}
+			\item CPU: 3.6GHz Intel i3 Processor or higher
+			\item RAM: 4 GB or higher
+			\item Disk Space: 1 GB or higher
+		\end{enumerate}
+	\pagebreak
+
+\section{Test cases}
+The components that will be tested are sign up form, login form, create profile form, add post form and add comment form. The pass/fail criteria will change for every form because of its varying inputs.
+
+\subsection {Test Case 1: New User Registration}
+\begin{center}
+	\begin{longtable}{ | p{2cm} | p{3cm} |  p{3cm} | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Test Id} & \textbf{Purpose} & \textbf{Input} & \textbf{Expected Output} & \textbf{Test Status} \\
+		\hline
+			1.1 & Validating username entered & Cannot be blank & If validated, user is allowed to register. & Pass- User successfully registered\\
+		\hline
+			1.2 & Validating email entered & Has to be in the email format, with @ and a domain eg. .com, .co.in & If validated, user is allowed to register & Pass- User successfully registered\\
+		\hline
+			1.3 & Validating password entered & Cannot be blank. Password should be confirmed by the user and must be the same & If validated, user is allowed to register & Pass- User successfully registered\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection {Test Case 2: User Login}
+\begin{center}
+	\begin{longtable}{ | p{2cm} | p{3cm} |  p{3cm} | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Test Id} & \textbf{Purpose} & \textbf{Input} & \textbf{Expected Output} & \textbf{Test Status} \\
+		\hline
+			2.1 & Validating credentials entered & Cannot be blank & If validated, user is allowed to submit Login form & Pass- User was able to submit the credentials\\
+		\hline
+			2.2 & Verifying email and password & User must enter correct email ID and corresponding password & User will be logged in to the website & Pass- User logged in successfully\\
+		\hline
+			1.3 & Validating password entered & User entered incorrect email or incorrect password & User is not allowed to login and error message is displayed & Pass- User not allowed to login\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection {Test Case 3: Adding post and liking post}
+\begin{center}
+	\begin{longtable}{ | p{2cm} | p{3cm} |  p{3cm} | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Test Id} & \textbf{Purpose} & \textbf{Input} & \textbf{Expected Output} & \textbf{Test Status} \\
+		\hline
+			3.1 & Validating content entered & Content cannot be blank & If validated, the post is saved in the database and displayed on the website. & Pass- Post saved in the database and displayed\\
+		\hline
+			3.2 & Liking and disliking the post & Users are allowed to like or dislike a post if logged in.  & User cannot dislike if there are no likes to the post & Pass-User cannot like if not logged in. Like counter remains at 0 even if users tried to dislike.\\
+		\hline
+	\end{longtable}
+\end{center}
+
+\pagebreak
+\subsection {Test Case 4: Adding education}
+\begin{center}
+	\begin{longtable}{ | p{2cm} | p{3cm} |  p{3cm} | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Test Id} & \textbf{Purpose} & \textbf{Input} & \textbf{Expected Output} & \textbf{Test Status} \\
+		\hline
+			4.1 & Adding degree & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.2 & Adding university & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.3 & Adding grade & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.4 & Choosing field of education & Cannot be blank and has to been chosen from the list provided & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.4 & Adding location & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.5 & Adding start date & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.6 & Choosing if it is current place of study & Nil & Nil & Pass - User successfully added education record\\
+\hline
+			4.7 & Adding end date & Cannot be entered if it is current place of study. Cannot be blank if it is not current place of study. & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+\hline
+			4.8 & Adding description & Cannot be blank & If validated, user is allowed to add education record. & Pass - User successfully added education record\\
+
+		\hline
+	\end{longtable}
+\end{center}
+
+\subsection {Test Case 5: Adding comments and liking comments}
+\begin{center}
+	\begin{longtable}{ | p{2cm} | p{3cm} |  p{3cm} | p{3cm} | p{3cm} | }
+		\hline
+			\textbf{Test Id} & \textbf{Purpose} & \textbf{Input} & \textbf{Expected Output} & \textbf{Test Status} \\
+		\hline
+			5.1 & Validating content entered & Content cannot be blank & If validated, the comment  is saved in the database and displayed on the website. & Pass- Comment saved in the database and displayed\\
+		\hline
+			5.2 & Liking and disliking the comment & Users are allowed to like or dislike a comment if logged in.  & User cannot dislike if there are no likes to the comments & Pass - User cannot like if not logged in. Like counter remains at 0 even if users tried to dislike.\\
+		\hline
+	\end{longtable}
+\end{center}
+\pagebreak
+	
+\section{Test Logs}
+\subsection{Log in functionality}
+\begin{figure} [h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/TestLog1.png}
+    \caption{Registration}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/TestLog2.png}
+    \caption{Login}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\textwidth]{images/TestLog3.png}
+    \caption{Adding a post and liking it}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{images/TestLog4.png}
+    \caption{Adding education record}
+\end{figure}
+
+\begin{figure}[H] 
+    \centering
+    \includegraphics[width=1\textwidth]{images/TestLog5.png}
+    \caption{Adding a comment and liking it}
+\end{figure}
+
+\pagebreak
+
+\section{System Architecture}
+\begin{center}
+\begin{longtable}{ | p{4cm} | p{4cm} | p{4cm} | p{4cm} | }
+\hline
+	\textbf{Action} & \textbf{Date} & \textbf{Observed results} & \textbf{Position of output}\\
+\hline
+	New user registration & 04/04/2022 & Passed the test results & NA \\
+\hline
+	User login& 05/04/2022 & Passed the test results & NA \\
+\hline
+	Adding a post and liking/disliking & 07/04/2022 & Passed the test results & NA \\
+\hline
+	Adding education record & 09/04/2022 & Passed the test results & NA \\
+\hline
+	Adding a comment and liking/disliking & 11/04/2022 & Passed the test results & NA \\
+\hline
+	\end{longtable}
+\end{center}
+The Test Cases implemented and the Test Logs conducted gave us insights of the application. All of the testcases passed for the following functionalities:
+\begin{enumerate}
+	\item New user registration
+	\item User login
+	\item Adding a post and liking/disliking
+	\item Adding education record
+\item Adding a comment and liking/disliking
+\end{enumerate}
+\end{document}

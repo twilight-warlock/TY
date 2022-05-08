@@ -1,0 +1,91 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\title{SRS for Student Networking Website}
+\author{Rajas Bondale}
+\date{February 7, 2022}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\subsection{Product overview}
+It is a networking website for students where they can write posts on almost any interest of their own. Comments on the posts will allow for further discussion. This will be a web application which will run on any web browser.The users of the application do not need any technical knowledge to use the site. Students need to have internet connection to access the web application. Students can like or comment on the posts written by other users. 
+	
+\section{Specific Requirements}
+\subsection{External Interface Requirements}
+\subsubsection{User Interfaces}
+Our networking site should contain the following interfaces:
+\begin{enumerate}
+\item \textbf{Login Page:} For authenticating registered users. This screen should ac-
+cept user id, password. It also provides features for ”New user registration". 
+\item \textbf{Register Page:} This page will contain a form which takes details of any new
+visitor who wants to register and create an account on this application.
+\item \textbf{Home Page:} This page will show all posts made by other users.
+\item \textbf{Others' profile page: } This page will show profiles of other students which will display all the details taken by the user during registration. 
+\item \textbf{User's profile page: } This page will show profile of the users with the details they filled. It will also provide features for "Update profile". 
+\item \textbf{Posts' page: } This page shows the post along with the comments of the users. 
+\item \textbf{Update posts' page: }This page allows to change the contents of a post. Access to this page is only allowed to the owner of the post. 
+\end{enumerate}
+\subsubsection{Hardware Interfaces}
+There is no direct hardware interface specifically for our application. The web
+application runs on an application server hosted in-house on enterprise hard-
+ware.
+\subsubsection{Software Interfaces}
+Our application should integrate with the following interfaces:
+\begin{enumerate}
+\item Database to get post details, comments, likes, user details etc.
+\item Web Browser
+\end{enumerate}
+\subsubsection{Communication Protocols}
+The customer must connect to the internet to access the web application. The
+protocol used will be HTTP.
+		\subsection{Software Product Features:  }
+		\begin{enumerate}
+\item A login page is essential where when a user enters correct username and
+password, the user should be able to access the application.
+\item A signup page is essential where a new user can register and create an
+account.
+\item A display page is essential where users can see posts on the networking site, comment on them and like the posts. It will also users to update posts and profile, delete posts and comments
+		\end{enumerate}
+		\begin{enumerate}
+		\item \textbf{Functional requirements: }
+		\begin{enumerate}
+			\item Create post: Every user has the capability to create a new informative post on the topic of their choice.
+			\item Create comments: Every user has the capability to start a discussion on a particular topic via commenting on the live blog in real time.
+			\item Create profile: Every user has the capability to own their own page with their personal details that they are willing to share on the global platform
+			\item Update posts: Every user has the capability to update their own posts in case there is a typographical error.
+			\item Update profile: Every user has the capability to update their profile based on their recent experiences.
+			\item Delete posts: Every user has the capability to delete only their own posts if they wish to do so.
+			\item Delete comments: Every user has the capability to delete only their own comments if they wish to do so.
+			\item Like a post: Every user has the capability to appreciate the posts written by fellow users by liking them.
+			\item Like a comment: Every user has the capability to appreciate the comments written by fellow users by liking them.
+			\item Display posts: Every user has the capability to view all the posts of the users shared on the network.
+			\item Display profile: Every user has the capability to view profiles of the users on the network.
+			\item Display comment: Every user has the capability to view all the comments of the users shared on the network.
+		\end{enumerate}
+		\end{enumerate}
+		\subsection{Software System Attributes: }
+	
+			\subsubsection{Security: } Only registered users are allowed to post, comment andlike.
+			\subsubsection{User friendly: }Easy to read and write blogs and have a discussion below each blog.
+			\subsubsection{Performance: }Super fast deployment of blogs and real time updation of posts, comments and likes.
+			\subsubsection{Maintainability: }The database is maintained over a huge cluster of super computers spread all across the world.
+			\subsubsection{Portability: }The software shall be deployed at any machine
+			\subsubsection{Reusability: }The data and record that are saved shall be reused if needed that’s stored in backup
+			\subsubsection{Reliability: }
+\begin{enumerate}
+					\item Increasing the performance of the software will improve the reliability of the software.
+					\item Storing backup data can increase reliability of the software.
+		\end{enumerate}
+		\subsection{Database Requirements: }
+		\begin{enumerate}
+\item The database should contain posts; the contents, likes and user who created it.
+\item The database should contain user details.
+\item The database should contain comments; its contents, the users' who posted them and the posts it is related to. 
+\end{enumerate}
+
+
+
+
+\end{document}
